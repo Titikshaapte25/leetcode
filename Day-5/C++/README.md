@@ -1,33 +1,41 @@
-C++ Code for Palindrome Detection
+# Integer Palindrome Checker (C++)
 
-This C++ code implements a function isPalindrome that determines whether a given integer x is a palindrome. A palindrome is a number that reads the same backward as forward, such as 121, 1001, or -9009.
+This C++ code implements an efficient algorithm to determine whether a given integer is a palindrome. A palindrome is a number that reads the same backward as forward, e.g., 121, 1221, or 1001.
 
-Key Features:
+## Key Features:
 
-Handles both positive and negative numbers (except overflow).
-Efficiently reverses the integer using iterative calculation.
-Provides clear test cases for demonstration.
-How It Works:
+- Handles positive and negative integers.
+- Handles integer overflow gracefully using `long int` for intermediate calculations.
+- Efficiently reverses digits to check for palindrome condition.
+- Includes unit test cases for comprehensive testing.
 
-isPalindrome Function:
+## How It Works:
 
-Returns false if x is negative.
-Initializes variables org to store the original x and rev to accumulate the reversed value.
-Iterates while org is greater than 0:
-Extracts the least significant digit using % 10.
-Multiplies rev by 10 to shift existing digits left.
-Adds the extracted digit to rev to build the reversed number.
-Divides org by 10 to remove the processed digit.
-Compares the original x and the reversed rev. If they are equal, x is a palindrome; otherwise, it's not.
-Testing:
+1. **Input Validation:**
+   - The `isPalindrome` function checks if the input `x` is negative. If so, it returns `false` as negative integers cannot be palindromes.
+2. **Reverse Digits:**
+   - The function creates two variables: `org` to store the original `x` and `rev` to store the reversed number.
+   - It uses a `while` loop to iterate through the digits of `org`:
+     - In each iteration, it calculates the remainder of `org` divided by 10 and adds it to the leftmost position of `rev` (using `rev = (10 * rev) + (org % 10)`) to build the reversed number.
+     - It divides `org` by 10 to remove the processed digit.
+3. **Palindrome Check:**
+   - The function compares the original number (`x`) with the reversed number (`rev`). If they are equal, it returns `true`, indicating that `x` is a palindrome. Otherwise, it returns `false`.
 
-The runTestCases function takes a vector of integers as input.
-Creates a Solution object to access the isPalindrome function.
-Iterates through the test cases vector, calling isPalindrome for each value and printing the result.
+## Usage:
 
-Enhancements:
+1. Clone or download the repository.
+2. Build the code using your preferred C++ compiler.
+3. Run the executable with no arguments to execute the test cases.
 
-Overflow Handling: The current code might overflow for very large x values. Consider using safer data types like long long or BigNumber libraries.
-Error Handling: The code assumes valid input. Add checks for invalid types or unexpected values (e.g., strings).
-Edge Cases: Consider handling non-numeric inputs or empty test cases more gracefully.
-Time and Space Complexity: Analyze the code's time and space complexity and optimize if necessary.
+## Test Cases:
+
+The code includes a `runTestCases` function that executes several test cases with expected outputs: try with this
+
+```c++
+std::vector<int> testCases = {
+    {1221},
+    {10},
+    {-121},
+    {123454321}, // Large palindrome
+    {1000000001} // Integer overflow
+};
