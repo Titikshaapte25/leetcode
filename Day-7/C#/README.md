@@ -32,7 +32,8 @@ Once the loop completes, the ans array contains the waiting days for each day in
 
 ## Example:
 
-Input: temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
-Output: ans = [1, 1, 4, 2, 1, 1, 0, 0]
-Time Complexity: O(N) due to the single pass through the array.
-Space Complexity: O(N) because of the stack usage.
+  Input: temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
+    Output: ans = [1, 1, 4, 2, 1, 1, 0, 0]
+
+- Time Complexity: O(N) due to the single pass through the array.
+- Space Complexity: O(N) because of the stack usage.
