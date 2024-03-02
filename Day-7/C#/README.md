@@ -1,16 +1,16 @@
-#Daily Temperatures Analysis
+# Daily Temperatures Analysis
 
 This code implements the DailyTemperatures function, which analyzes a list of daily temperatures to determine how many days each element needs to wait until a warmer temperature occurs.
 
-##Problem Statement:
+## Problem Statement:
 
 Given an array temperatures representing daily temperatures, return another array ans where ans[i] indicates the number of days to wait after the ith day to encounter a warmer temperature. If no warmer day exists, set ans[i] to 0.
 
-##Approach:
+## Approach:
 
 The function utilizes a stack to efficiently find the next warmer temperature for each day. The steps involved are:
 
-##Initialize:
+## Initialize:
 Create an empty stack (stack) to store indices of increasing temperatures.
 Initialize an output array (ans) of the same length as temperatures to store waiting days.
 Iterate from Right to Left:
@@ -29,7 +29,7 @@ After processing the current temperature, push its index (i) onto the stack to p
 Return Result:
 Once the loop completes, the ans array contains the waiting days for each day in the input array. Return ans.
 
-##Example:
+## Example:
 
 Input: temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
 Output: ans = [1, 1, 4, 2, 1, 1, 0, 0]
